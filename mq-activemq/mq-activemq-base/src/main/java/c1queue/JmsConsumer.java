@@ -1,4 +1,4 @@
-package com.ylkget.mq.activemq.base.c1queue;
+package c1queue;
 
 import org.apache.activemq.ActiveMQConnectionFactory;
 

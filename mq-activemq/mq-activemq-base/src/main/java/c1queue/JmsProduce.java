@@ -1,4 +1,4 @@
-package com.ylkget.mq.activemq.base.c1queue;
+package c1queue;
 
 import org.apache.activemq.ActiveMQConnectionFactory;
 
@@ -33,8 +33,10 @@ public class JmsProduce {
 
         // 5 创建消息的生产者
         MessageProducer messageProducer = session.createProducer(queue);
+
         // 非持久化消息 和持久化消息演示
-        messageProducer.setDeliveryMode(DeliveryMode.PERSISTENT);   // 持久化  如果开启 就会存入文件或数据库中
+//        messageProducer.setDeliveryMode(DeliveryMode.NON_PERSISTENT);   // 非持久
+        messageProducer.setDeliveryMode(DeliveryMode.PERSISTENT);   // 持久化 默认持久 会存入文件或数据库中
 
         // 6 通过messageProducer 生产 3 条 消息发送到消息队列中
         for (int i = 1; i < 4 ; i++) {

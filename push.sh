@@ -1,3 +1,4 @@
+#!/bin/bash
 # 复制 README.md
 # cp README.md docs/README.md
 

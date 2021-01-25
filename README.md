@@ -1,5 +1,3 @@
-# spring-hub
-
 <h1 align="center"><a href="https://github.com/ylksty" target="_blank">spring-hub</a></h1>
 <p align="center">
   <img alt="author" src="https://img.shields.io/badge/author-yanglk-blue.svg"/>
@@ -8,7 +6,13 @@
   <a href="https://github.com/ylksty/spring-hub/blob/master/LICENSE"><img alt="LICENSE" src="https://img.shields.io/github/license/ylksty/spring-hub.svg"/></a>
 </p>
 
-### [mq-activemq](https://joeup.gitee.io/think-java/#/docs/backend/mom/activemq)
+## 项目简介
+
+`spring-hub`是一个用来学习并实战Spring相关的项目
 
 ## modules
+
+| Module 名称                                                  | Module 介绍                                                  |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| [mq-activemq](https://github.com/ylksty/spring-hub/tree/main/mq-activemq) | MQ入门、activemq详细介绍、 [文档](https://joeup.gitee.io/think-java/#/docs/backend/mom/activemq) |
 
