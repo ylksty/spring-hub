@@ -9,7 +9,7 @@ git add .
 read -p "输入备注：🎨 " message
 if [ -z $message ]
 then
-  message="规范"
+  message="规范 "
 fi
 
 git commit -m "🎨 $message"
