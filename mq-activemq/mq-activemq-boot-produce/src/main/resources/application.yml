@@ -1,0 +1,13 @@
+server:
+  port: 6000
+
+spring:
+  activemq:
+    broker-url: tcp://192.168.33.10:61616
+    user: admin
+    password: admin
+  jms:
+    pub-sub-domain: false      # false = queue    true =  topic
+
+# 目的地
+mydestination: boot-activemq-queue

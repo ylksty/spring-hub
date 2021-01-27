@@ -13,6 +13,8 @@
     <packaging>pom</packaging>
     <modules>
         <module>mq-activemq-base</module>
+        <module>mq-activemq-spring</module>
+        <module>mq-activemq-boot-produce</module>
     </modules>
 
 </project>
