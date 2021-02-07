@@ -3,27 +3,39 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
-		<artifactId>mq-activemq</artifactId>
+		<artifactId>redis</artifactId>
 		<groupId>com.ylkget</groupId>
 		<version>1.0-SNAPSHOT</version>
 	</parent>
-	<artifactId>mq-activemq-boot-consumer</artifactId>
+	<artifactId>boot-redis-cache</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>mq-activemq-boot-consumer</name>
+	<name>boot-redis-cache</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>1.8</java.version>
 	</properties>
 	<dependencies>
-
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
+			<artifactId>spring-boot-starter</artifactId>
 		</dependency>
 
+		<!-- 主要 -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-activemq</artifactId>
+			<artifactId>spring-boot-starter-data-redis</artifactId>
+		</dependency>
+
+		<!-- 对象池，使用redis时必须引入 -->
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-pool2</artifactId>
+		</dependency>
+
+		<!-- 引入 jackson 对象json转换 -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-json</artifactId>
 		</dependency>
 
 		<dependency>
@@ -32,6 +44,17 @@
 			<scope>test</scope>
 		</dependency>
 
+		<!-- guava 番石榴 工具集 -->
+		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<optional>true</optional>
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -39,7 +62,6 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
-				<version>2.3.5.RELEASE</version>
 			</plugin>
 		</plugins>
 	</build>
