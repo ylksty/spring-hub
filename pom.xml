@@ -11,6 +11,7 @@
     <modules>
 <!--        <module>mq-activemq</module>-->
         <module>boot-redis-cache</module>
+        <module>boot-elasticsearch-rest-high-level-client</module>
     </modules>
 
     <properties>
