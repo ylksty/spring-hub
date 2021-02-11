@@ -1,12 +1,10 @@
-package com.ylkget.bootESRestHigh.config;
-
+package com.ylkget.elasticsearch.config;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Component;
 
 import javax.validation.constraints.NotNull;
@@ -18,14 +16,14 @@ import java.util.List;
  * ElasticsearchProperties
  * </p>
  *
- * @author joe 2021-02-10 21:32
+ * @author joe 2021-02-11 10:33
  */
+
 @Data
 @Builder
 @Component
 @NoArgsConstructor
 @AllArgsConstructor
-@Configuration
 @ConfigurationProperties(prefix = "demo.data.elasticsearch")
 public class ElasticsearchProperties {
     /**
