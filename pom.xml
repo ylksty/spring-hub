@@ -13,6 +13,7 @@
         <module>boot-redis-cache</module>
         <module>boot-elasticsearch-rest-high-level-client</module>
         <module>boot-orm-mybatis-plus</module>
+        <module>boot-session</module>
     </modules>
 
     <properties>
