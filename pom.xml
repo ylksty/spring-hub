@@ -14,6 +14,7 @@
         <module>boot-elasticsearch-rest-high-level-client</module>
         <module>boot-orm-mybatis-plus</module>
         <module>boot-session</module>
+        <module>boot-sso</module>
     </modules>
 
     <properties>
