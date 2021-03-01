@@ -4,6 +4,17 @@
 
 ## pom.xml
 
+```xml
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-data-redis</artifactId>
+    </dependency>
+    <dependency>
+        <groupId>org.springframework.session</groupId>
+        <artifactId>spring-session-data-redis</artifactId>
+    </dependency>
+```
+
 ## application.yml
 
 ```yaml
@@ -44,6 +55,10 @@ spring:
 2. 最开始未登录，所以会跳转到登录页：http://localhost:8080/demo/page/login?redirect=true 然后点击登录按钮
 3. 登录之后，跳转回首页，此时可以看到首页显示token信息。
 4. 重启程序。不关闭浏览器，直接刷新首页，此时不跳转到登录页。测试成功！
+
+## 原理
+* 生成session在redis的hash索引，并base64保存在cookie
+* 页面请求，从cookie获得session在redis的索引，获得session内容
 
 ## 参考
 
