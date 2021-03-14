@@ -20,9 +20,14 @@
 
 ## modules
 
-| Module 名称                           | Module 介绍                                                  |
-| ------------------------------------- | ------------------------------------------------------------ |
-| [mq-activemq](./mq-activemq)          | MQ入门、activemq详细介绍、 [文档](https://joeup.gitee.io/think-java/#/docs/backend/mom/activemq) |
-| [redis-cache](redis/boot-redis-cache) | spring-boot 整合 redis，操作redis中的数据，并使用redis缓存数据 |
+|      | Module 名称                                | Module 介绍                                                  |
+| ---- | ------------------------------------------ | ------------------------------------------------------------ |
+| 1    | [mq-activemq](./mq-activemq)               | MQ入门、activemq详细介绍、 [文档](https://joeup.gitee.io/think-java/#/docs/backend/mom/activemq) |
+| 2    | [boot-redis-cache](redis/boot-redis-cache) | spring-boot 整合 redis，操作redis中的数据，并使用redis缓存数据 |
+| 3    | [boot-session](./boot-session)             | session管理                                                  |
+| 4    | [boot-sso](./boot-sso)                     | 单点登录                                                     |
+| 5    | boot-task-quartz                           | 定时任务                                                     |
+|      |                                            |                                                              |
+|      |                                            |                                                              |
 
 
