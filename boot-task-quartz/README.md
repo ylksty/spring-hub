@@ -1,4 +1,8 @@
-### [【Java定时任务解决方案】SpringBoot整合Quartz实现任务调度](https://www.bilibili.com/video/BV1PK4y1H7mD)
+### 项目实践
+
+- https://github.com/ylksty/lc-fast
+
+### [SpringBoot整合Quartz实现任务调度](https://www.bilibili.com/video/BV1PK4y1H7mD)
 
 - 课程大纲
 - 小顶堆

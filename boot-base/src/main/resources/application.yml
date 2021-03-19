@@ -1,0 +1,5 @@
+server:
+  port: 2500
+mycar:
+  brand: bmw
+  price: 2000000

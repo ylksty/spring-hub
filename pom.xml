@@ -15,6 +15,7 @@
         <module>boot-orm-mybatis-plus</module>
         <module>boot-session</module>
         <module>boot-sso</module>
+        <module>boot-base</module>
     </modules>
 
     <properties>
