@@ -23,7 +23,7 @@ import java.util.List;
  * @author joe 2021/3/20 12:06
  */
 @Service("userDetailsService")
-public class MyUserDetailsService implements UserDetailsService {
+public class MyUserDetailsService3 implements UserDetailsService {
     @Autowired
     private UsersMapper usersMapper;
 

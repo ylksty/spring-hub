@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @author joe 2021/3/18 09:12
  */
 @RestController
+@RequestMapping("/test")
 public class HelloController {
 
     @GetMapping("hello")

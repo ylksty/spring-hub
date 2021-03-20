@@ -14,7 +14,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
  *
  * @author joe 2021/3/20 10:14
  */
-@Configuration
+//@Configuration
 public class SecurityConfig2 extends WebSecurityConfigurerAdapter {
     // 注入 PasswordEncoder 类到 spring 容器中
     @Bean
