@@ -10,7 +10,6 @@ import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -42,7 +41,7 @@ public class MyUserDetailsService3 implements UserDetailsService {
         if(users == null) {//数据库没有用户名，认证失败
             throw  new UsernameNotFoundException("用户名不存在！");
         }
-        List<GrantedAuthority> auths = AuthorityUtils.commaSeparatedStringToAuthorityList("admin,ROLE_sale");
+        List<GrantedAuthority> auths = AuthorityUtils.commaSeparatedStringToAuthorityList("admin,person,ROLE_sale");
         //从查询数据库返回users对象，得到用户名和密码，返回
 //        return new User(users.getUsername(), new BCryptPasswordEncoder().encode(users.getPassword()),auths);
         return new User(users.getUsername(), users.getPassword(),auths);
