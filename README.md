@@ -26,8 +26,8 @@
 | 2    | [boot-redis-cache](redis/boot-redis-cache) | spring-boot 整合 redis，操作redis中的数据，并使用redis缓存数据 |
 | 3    | [boot-session](./boot-session)             | session管理                                                  |
 | 4    | [boot-sso](./boot-sso)                     | 单点登录                                                     |
-| 5    | [boot-task-quartz](./boot-task-quartz)     | quartz定时任务                                               |
-|      |                                            |                                                              |
+| 5    | [boot-task-quartz](./boot-task-quartz)     | 定时任务                                                     |
+| 6    | [boot-security](./boot-security)           | 认证、授权                                                   |
 |      |                                            |                                                              |
 
 

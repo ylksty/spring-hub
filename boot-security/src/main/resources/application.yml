@@ -1,2 +1,14 @@
 server:
   port: 5000
+spring:
+  security:
+    # 设置登录的用户名和密码，方式一：通过配置文件
+    user:
+      name: joe
+      password: joe
+  datasource:
+    url: jdbc:mysql://localhost:3306/springhub?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: root
+debug: true
