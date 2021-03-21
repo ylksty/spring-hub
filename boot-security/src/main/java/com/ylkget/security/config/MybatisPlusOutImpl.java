@@ -15,8 +15,9 @@ import java.util.StringTokenizer;
  * @author joe 2021/3/21 12:07
  */
 public class MybatisPlusOutImpl implements Log {
+    private static Integer count = 0;
     public MybatisPlusOutImpl(String clazz) {
-        System.out.println("MybatisPlusOutImpl::" + clazz);
+//        System.out.println("MybatisPlusOutImpl::" + clazz);
     }
 
     public boolean isDebugEnabled() {
@@ -37,17 +38,31 @@ public class MybatisPlusOutImpl implements Log {
     }
 
     public void debug(String s) {
-        String test = "==>  Preparing: ";
+        String out = "debug::";
+        String sql = "==>  Preparing:";
+        String params = "==> Parameters:";
+        String total = "<==      Total:";
         String substring = s;
-        if (s.indexOf(test) == 0) {
-            substring = s.substring(test.length());
+        if (s.indexOf(sql) == 0) {
+            count++;
+            System.out.println("================================ SQL: " + count);
+            substring = s.substring(sql.length());
             substring = new SqlFormatterUtils().format(substring);
+            out = "SQL::" + substring;
+        } else if(s.indexOf(params) == 0) {
+            substring = s.substring(params.length());
+            out = "Params::" + substring;
+        } else if(s.indexOf(total) == 0) {
+            substring = s.substring(total.length());
+            out = "Total::" + substring;
+        } else {
+            out += s;
         }
-        System.out.println("debug::" + substring);
+        System.out.println(out);
     }
 
     public void trace(String s) {
-        System.out.println("trace::" + s);
+//        System.out.println("trace::" + s);
     }
 
     public void warn(String s) {
@@ -202,7 +217,7 @@ public class MybatisPlusOutImpl implements Log {
 
             private void commaAfterByOrFromOrSelect() {
                 out();
-                newline();
+//                newline();
             }
 
             private void logical() {
