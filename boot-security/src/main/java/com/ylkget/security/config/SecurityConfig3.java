@@ -9,6 +9,11 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.authentication.rememberme.JdbcTokenRepositoryImpl;
+import org.springframework.security.web.authentication.rememberme.PersistentTokenRepository;
+import org.springframework.security.web.csrf.CookieCsrfTokenRepository;
+
+import javax.sql.DataSource;
 
 /**
  * <p>
@@ -21,6 +26,17 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 public class SecurityConfig3 extends WebSecurityConfigurerAdapter {
     @Autowired
     private MyUserDetailsService3 userDetailsService;
+
+    //注入数据源
+    @Autowired
+    private DataSource dataSource;
+    @Bean
+    public PersistentTokenRepository persistentTokenRepository() {
+        JdbcTokenRepositoryImpl jdbcTokenRepository = new JdbcTokenRepositoryImpl();
+        jdbcTokenRepository.setDataSource(dataSource);
+//        jdbcTokenRepository.setCreateTableOnStartup(true);
+        return jdbcTokenRepository;
+    }
 
     // 注入 PasswordEncoder 类到 spring 容器中
     @Bean
@@ -68,7 +84,17 @@ public class SecurityConfig3 extends WebSecurityConfigurerAdapter {
                 .anyRequest() // 其他请求
                 .authenticated(); //需要认证
 
+        // 记住我
+        http.rememberMe()
+                .tokenRepository(persistentTokenRepository())
+                .tokenValiditySeconds(600)//设置有效时长，单位秒
+                .userDetailsService(userDetailsService);
+
         // 关闭 csrf
-        http.csrf().disable();
+        http.csrf()
+//                .csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse());
+                .disable();  //关闭csrf防护
     }
+
+
 }

@@ -12,3 +12,11 @@ spring:
     username: root
     password: root
 debug: false
+mybatis-plus:
+  mapper-locations:  classpath:mapper/*.xml
+  configuration:
+#    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    log-impl: com.ylkget.security.config.MybatisPlusOutImpl
+logging:
+  level:
+    com.ylkget.security.mapper: debug
