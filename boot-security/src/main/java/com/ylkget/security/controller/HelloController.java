@@ -5,6 +5,7 @@ import org.springframework.security.access.annotation.Secured;
 import org.springframework.security.access.prepost.PostAuthorize;
 import org.springframework.security.access.prepost.PostFilter;
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -59,7 +60,8 @@ public class HelloController {
     @Secured({"ROLE_boss"})
     @GetMapping("boss")
     public String boss(Model model) {
-        model.addAttribute("msg", "boss");
+        String username = SecurityContextHolder.getContext().getAuthentication().getName();
+        model.addAttribute("msg", username);
         return "success";
     }
 
