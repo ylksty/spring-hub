@@ -1,0 +1,37 @@
+@startuml
+'https://plantuml.com/class-diagram
+title Association-Aggregation-Composition
+
+class Person {
+    -idCard: IDCard
+    -head: Head
+    -setIDCard(idCard: IDCard): void
+}
+class IDCard {
+    -person: Person
+    -setPerson(person Person)
+}
+class Cloth
+
+Person --> Cloth : Association\n单向一对一
+Person -- IDCard : Association\n双向一对一
+
+class Computer {
+    -mouse: Mounse
+    -moniter: Moniter
+    -setMouse(Mouse mouse): void
+    -setMoniter(Monitor monitor): void
+}
+
+class Mounse
+class Moniter
+
+Computer o-- Mounse : Aggregation\n聚合
+Computer o-- Moniter : Aggregation\n聚合
+
+class Head
+
+Person *-- Head : Composition\n组合
+Person o-- IDCard : Aggregation\n聚合
+
+@enduml

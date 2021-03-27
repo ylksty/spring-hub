@@ -1,0 +1,47 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+abstract class Pizza {
+    #String name
+    +{abstract} void prepare()
+    +void bake()
+    +void cut()
+    +void box()
+    +void setName(String name)
+}
+
+class BJCheesePizza extends Pizza {
+    +void prepare()
+}
+
+class BJPepperPizza extends Pizza {
+    +void prepare()
+}
+
+class LDCheesePizza extends Pizza {
+    +void prepare()
+}
+
+class LDPepperPizza extends Pizza {
+    +void prepare()
+}
+
+abstract class OrderPizza {
+    +{abstract} Pizza createPizza(String orderType)
+    +OrderPizza()
+    -String getType()
+}
+
+class BJOrderPizza extends OrderPizza {
+    +Pizza createPizza(String orderType)
+}
+
+class LDOrderPizza extends OrderPizza {
+    +Pizza createPizza(String orderType)
+}
+
+BJOrderPizza ..> BJCheesePizza
+BJOrderPizza ..> BJPepperPizza : 依赖
+LDOrderPizza ..> LDCheesePizza
+LDOrderPizza ..> LDPepperPizza
+@enduml

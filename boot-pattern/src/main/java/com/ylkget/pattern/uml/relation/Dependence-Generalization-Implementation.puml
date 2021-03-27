@@ -1,0 +1,40 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+title Dependence-Generalization-Implementation
+
+class PersonDao
+class IDCard
+class Person
+class Deparment
+
+class PersonServiceBean {
+    -personDao: PersonDao
+    +save(person: Person): void
+    +getIDCard(personid: Interger): IDCard
+    +modify(): void
+}
+note right: Dependence\n依赖
+
+PersonServiceBean ..> IDCard
+PersonServiceBean ..> Person
+PersonServiceBean ..> PersonDao
+PersonServiceBean ..> Deparment
+
+abstract class DaoSupport{
+    +save(entity: Object): void
+    +delete(entity: Object): void
+}
+
+interface PersonService{
+    +delete(id: Interger): void
+}
+
+class PersonServiceBean {
+    +delete(Interger: id): void
+}
+
+DaoSupport<|-- PersonServiceBean : Generalization\n继承、泛化
+PersonService <|.. PersonServiceBean : Implementation\n接口实现
+
+@enduml
