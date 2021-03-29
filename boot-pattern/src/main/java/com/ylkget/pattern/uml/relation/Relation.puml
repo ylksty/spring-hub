@@ -1,8 +1,12 @@
 @startuml
-Class01 <.. Class02 : Dependency\n依赖
-Class05 <|-- Class06 : Generalization\n继承、泛化
-Class07 <|.. Class08 : Realization\n接口实现
-Class03 -- Class04 : Association\n关联
-Class09 o-- Class10 : Aggregation\n聚合
-Class11 *-- Class12 : Composite\n组合
+title Relation
+Interface I0
+Abstract A0
+Abstract A1
+C0 <.. C1 : Dependency\n依赖
+I0 <|.. A0 : Realization\n接口实现\nimplements
+A1 <|-- C2 : Generalization\n继承、泛化\nextends
+C3 -- C4 : Association\n关联
+C5 o-- C6 : Aggregation\n聚合
+C7 *-- C8 : Composite\n组合
 @enduml

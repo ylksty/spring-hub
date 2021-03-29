@@ -1,0 +1,30 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+abstract class Pizza {
+    +{abstract} void prepare()
+    +void bake()
+    +void cut()
+    +void box()
+    +void setName(String name)
+}
+
+class CheesePizza extends Pizza
+class GreekPizza extends Pizza
+class PepperPizza extends Pizza
+
+class SimpleFactory {
+    +Pizza createPizza(String orderType)
+    +{static} Pizza createPizza2(String orderType)
+}
+
+SimpleFactory ..> CheesePizza
+SimpleFactory ..> GreekPizza
+SimpleFactory ..> PepperPizza
+
+class OrderPizza
+class OrderPizza2
+
+SimpleFactory --o OrderPizza : aggregation\n聚合
+SimpleFactory --o OrderPizza2
+@enduml

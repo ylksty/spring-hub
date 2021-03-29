@@ -2,7 +2,7 @@ package com.ylkget.pattern.principle.singleresponsibility;
 
 /**
  * <p>
- *
+ * 单一职责
  * </p>
  *
  * @author joe 2021/3/26 12:08

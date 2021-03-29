@@ -1,0 +1,50 @@
+@startuml
+'https://plantuml.com/class-diagram
+title: bridge-remote.puml
+class Client
+interface Remote {
+    void power()
+}
+class BasicRemote implements Remote {
+    #Device device
+
+    +BasicRemote(Device device)
+    +void power()
+}
+class AdvancedRemote extends BasicRemote {
+    +AdvancedRemote(Device device)
+    +void mute()
+}
+
+interface Device {
+    boolean isEnabled()
+    void enable()
+    void disable()
+}
+
+class Radio implements Device {
+    - boolean on = false;
+
+    +boolean isEnabled()
+    +void enable()
+    +void disable()
+}
+
+class Tv implements Device {
+    -boolean on = false;
+
+    +boolean isEnabled()
+    +void enable()
+    +void disable()
+}
+
+package foo2 <<Rectangle>> {
+  class Class2
+}
+
+Client --> Radio
+Client --> BasicRemote
+BasicRemote::device o--> Device
+'AdvancedRemote::device o--> Device
+
+@enduml

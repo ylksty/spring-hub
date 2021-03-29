@@ -1,0 +1,21 @@
+@startuml
+title Relation2
+Interface Mouth {
+    say(String sth)
+}
+Abstract Body implements Mouth {
+    {abstract}say(String sth)
+}
+Class Joe extends Body {
+    +void say(String sth)
+}
+Class Apple {
+    +void msg(String sth)
+}
+
+Trump -- Joe : Association\n关联
+Apple <.. Joe : Dependency\n依赖
+
+Apple o-- AirPods : Aggregation\n聚合
+Apple *-- IOS : Composite\n组合
+@enduml

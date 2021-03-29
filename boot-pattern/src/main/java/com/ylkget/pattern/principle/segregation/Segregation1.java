@@ -2,7 +2,7 @@ package com.ylkget.pattern.principle.segregation;
 
 /**
  * <p>
- * Segregation1
+ * Segregation1 接口隔离
  * </p>
  *
  * @author joe 2021/3/26 13:51
