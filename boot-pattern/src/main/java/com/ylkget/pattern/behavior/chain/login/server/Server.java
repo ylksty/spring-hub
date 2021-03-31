@@ -25,7 +25,7 @@ public class Server {
     }
 
     /**
-     * Server gets email and password from client and sends the authorization
+     * Server gets email and password from Client and sends the authorization
      * request to the chain.
      */
     public boolean logIn(String email, String password) {

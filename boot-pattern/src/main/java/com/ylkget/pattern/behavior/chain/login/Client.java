@@ -33,7 +33,7 @@ public class Client {
         middleware.linkWith(new UserExistsMiddleware(server))
                 .linkWith(new RoleCheckMiddleware());
 
-        // Server gets a chain from client code.
+        // Server gets a chain from Client code.
         server.setMiddleware(middleware);
     }
 

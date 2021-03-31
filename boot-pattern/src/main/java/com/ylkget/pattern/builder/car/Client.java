@@ -17,7 +17,7 @@ public class Client {
     public static void main(String[] args) {
         Director director = new Director();
 
-        // Director gets the concrete builder object from the client
+        // Director gets the concrete builder object from the Client
         // (application code). That's because application knows better which
         // builder to use to get a specific product.
         CarBuilder carBuilder = new CarBuilder();
