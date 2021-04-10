@@ -16,6 +16,7 @@
         <module>boot-session</module>
         <module>boot-sso</module>
         <module>boot-base</module>
+        <module>java</module>
     </modules>
 
     <properties>
